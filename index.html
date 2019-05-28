@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo</title>
+</head>
+<body>
+<canvas id="canvas"></canvas>
+
+<!-- 有对 promise的依赖，如不考虑兼容，可尝试删除该依赖 -->
+<script src="//www.promisejs.org/polyfills/promise-6.1.0.js"></script>
+<!-- 将上方下载的文件放置于js文件夹下 -->
+<script src="./js/qr-code-with-logo.browser.min.js"></script>
+<script>
+  // 教师端：http://fieldedu.cn/app/teacher.php
+  // 学生端 http://fieldedu.cn/app/
+  QrCodeWithLogo.toCanvas({
+    canvas: document.getElementById('canvas'), // 换成你的canvas节点
+    content: 'http://fieldedu.cn/app',
+    width: 600,
+    height:600,
+    logo: {
+      src: 'assets/student-cut.png',
+      logoSize:0.2
+    }
+  })
+</script>
+</body>
+</html>
